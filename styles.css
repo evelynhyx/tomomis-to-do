@@ -1,6 +1,6 @@
 :root {
     --background: #d2f2fb;
-    --primary-color: #cad4e1;
+    --primary-color: #dae0e3;
     --secondary-color: #91a2ab;
     --accent-color: #44d7dd;
     --text-color: black;
@@ -18,7 +18,6 @@ html {
 }
 
 body {
-    min-height: 100vh;
     padding: 10px;
     background-color: var(--background);
     display: flex;
@@ -42,6 +41,10 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+#to-do-list {
+    list-style: none;
 }
 
 #to-do-input {
@@ -144,7 +147,7 @@ input[type="checkbox"] {
 
 @media (max-width: 500px) {
     html {
-        font-size: 12pt;
+        font-size: 12px;
     }
 
     #add-btn {

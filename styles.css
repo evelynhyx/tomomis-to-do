@@ -208,6 +208,68 @@ input[type="checkbox"] {
     color: #3abfc4;
 }
 
+.info-img {
+    position: fixed;
+    top: 60vh;
+    right: -10vh;
+    z-index: 999;
+    width: 12vw;
+    cursor: pointer;
+    transition: transform 0.4s ease-in-out;
+}
+
+.info-img:hover {
+    transform: translateX(-5vh);
+}
+
+.info-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: #00000066;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-modal-overlay.hidden {
+    display: none;
+}
+
+.info-modal {
+    background: #cbd3d7;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    width: 50vw;
+}
+
+#info-close-btn {
+    background-color: var(--accent-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 1000px;
+    color: var(--background);
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#info-close-btn:hover {
+    background-color: #3abfc4;
+}
+
+#info-modal-h2 {
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    text-align: center;
+    font-size: 2rem;
+}
+
+#info-modal-text {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
 @media (max-width: 500px) {
     html {
         font-size: 12px;

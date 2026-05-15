@@ -4,6 +4,8 @@ const toDoListUL = document.getElementById('to-do-list');
 const modalOverlay = document.getElementById('modal-overlay');
 const modalConfirm = document.getElementById('modal-confirm');
 const modalCancel = document.getElementById('modal-cancel');
+const overlay = document.getElementById('info-modal-overlay');
+const closeBtn = document.getElementById('info-close-btn');
 
 let pendingDeleteIndex = null;
 
@@ -103,3 +105,23 @@ function getToDos() {
     const toDos = localStorage.getItem('toDos') || '[]';
     return JSON.parse(toDos);
 }
+
+document.querySelector('.info-img').addEventListener('click', () => {
+    overlay.classList.remove('hidden');
+});
+
+overlay.addEventListener('click', () => {
+    overlay.classList.add('hidden');
+});
+
+document.querySelector('.info-modal').addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+closeBtn.addEventListener('click', () => {
+    overlay.classList.add('hidden');
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') overlay.classList.add('hidden');
+});

@@ -1,6 +1,6 @@
 :root {
     --background: #d2f2fb;
-    --primary-color: #dae0e3;
+    --primary-color: #cbd3d788;
     --secondary-color: #91a2ab;
     --accent-color: #44d7dd;
     --text-color: black;
@@ -79,6 +79,11 @@ form {
     font: inherit;
     color: var(--background);
     cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#add-btn:hover {
+    background-color: #3abfc4;
 }
 
 .to-do {
@@ -143,6 +148,64 @@ input[type="checkbox"]:checked ~ .to-do-text {
 
 input[type="checkbox"] {
     display: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: #00000066;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal {
+    background: #cbd3d7;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+#modal-confirm {
+    background-color: var(--accent-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 1000px;
+    color: var(--background);
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#modal-confirm:hover {
+    background-color: #3abfc4;
+}
+
+#modal-cancel {
+    background: none;
+    border: 2px solid var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 1000px;
+    color: var(--accent-color);
+    font: inherit;
+    cursor: pointer;
+    transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#modal-cancel:hover {
+    border-color: #3abfc4;
+    color: #3abfc4;
 }
 
 @media (max-width: 500px) {
